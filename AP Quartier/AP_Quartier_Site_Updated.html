@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AP Quartier - Paysagiste Professionnel Montréal | Propreté. Précision. Perfection.</title>
+    <meta name="description" content="AP Quartier offre des services d'aménagement paysager, entretien de cour, déneigement et lavage de vitres à Montréal. Satisfaction garantie à 100%. Contactez-nous: 514-506-0465">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/x-icon" href="Images/Logo/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Roboto+Condensed:wght@700&family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --vert-electrique: #39FF14;
+            --vert-fonce: #1A3D0F;
+            --noir: #0A0A0A;
+            --gris-anthracite: #2C2C2C;
+            --blanc: #FFFFFF;
+            --gris-clair: #E5E5E5;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--blanc);
+            background: var(--noir);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            min-width: 320px;
+        }
+
+        /* Header */
+        header {
+            background: var(--noir);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--vert-electrique);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        .logo-box {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--vert-electrique), var(--vert-fonce));
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .logo-img{
+        object-fit: contain;
+        background: transparent; /* enlève l’effet gradient derrière */
+        }
+        .logo-box:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0%, 100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .logo-text {
+            font-size: 26px;
+            font-weight: 900;
+            color: var(--blanc);
+            white-space: nowrap;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-menu a {
+            color: var(--blanc);
+            text-decoration: none;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--vert-electrique);
+        }
+
+        .cta-primary {
+            background: var(--vert-electrique);
+            color: var(--noir);
+            padding: 12px 28px;
+            border-radius: 0;
+            text-decoration: none;
+            font-weight: 900;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
+            white-space: nowrap;
+            display: inline-block;
+        }
+
+        .cta-primary:hover {
+            background: var(--blanc);
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: 2px solid var(--vert-electrique);
+            color: var(--vert-electrique);
+            font-size: 24px;
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+
+        /* Hero Split */
+        .hero-split {
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .hero-left {
+            background: var(--gris-anthracite);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(32px, 5vw, 64px);
+            margin-bottom: 25px;
+            line-height: 1.1;
+        }
+
+        .hero-content h1 .highlight {
+            color: var(--vert-electrique);
+            display: block;
+        }
+
+        .hero-content p {
+            font-size: clamp(16px, 2vw, 20px);
+            
+            margin-bottom: 35px;
+            color: var(--gris-clair);
+        }
+
+        .hero-right {
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 1000"><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%231A3D0F;stop-opacity:1" /><stop offset="100%" style="stop-color:%230A0A0A;stop-opacity:1" /></linearGradient></defs><rect fill="url(%23grad)" width="700" height="1000"/><text x="350" y="500" font-size="36" fill="white" text-anchor="middle" font-family="Arial" font-weight="bold">AVANT / APRÈS</text></svg>');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .hero-badge {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            background: var(--vert-electrique);
+            color: var(--noir);
+            padding: 15px 25px;
+            font-weight: 900;
+            font-size: 18px;
+            text-transform: uppercase;
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.6);
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: var(--noir);
+            padding: 50px 0;
+            border-top: 2px solid var(--vert-electrique);
+            border-bottom: 2px solid var(--vert-electrique);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 50px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Roboto Mono', monospace;
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 700;
+            color: var(--vert-electrique);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gris-clair);
+        }
+
+        /* Services Grid */
+        .services {
+            padding: 100px 0;
+            background: var(--gris-anthracite);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(32px, 5vw, 52px);
+            
+            margin-bottom: 20px;
+        }
+
+        .section-header .underline {
+            width: 120px;
+            height: 4px;
+            background: var(--vert-electrique);
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .service-box {
+            background: var(--noir);
+            padding: 50px;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-box:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(57, 255, 20, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .service-box:hover:before {
+            left: 100%;
+        }
+
+        .service-box:hover {
+            border-color: var(--vert-electrique);
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.3);
+        }
+
+        .service-box h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--vert-electrique);
+        }
+
+        .service-box ul {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .service-box ul li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .service-box ul li:before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--vert-electrique);
+        }
+
+        .service-cta {
+            display: inline-block;
+            color: var(--vert-electrique);
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 14px;
+            border-bottom: 2px solid var(--vert-electrique);
+            transition: all 0.3s;
+        }
+
+        .service-cta:hover {
+            color: var(--blanc);
+            border-color: var(--blanc);
+        }
+
+        /* Projects */
+        .projects {
+            padding: 100px 0;
+            background: var(--noir);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        @media (max-width: 1024px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .project-card {
+            position: relative;
+            height: 400px;
+            background: var(--gris-anthracite);
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .project-image-before, .project-image-after {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: opacity 0.6s ease;
+        }
+
+        .project-image-before {
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect fill="%23666666" width="400" height="400"/><text x="200" y="190" font-size="24" fill="white" text-anchor="middle" font-family="Arial" font-weight="bold">AVANT</text><text x="200" y="220" font-size="14" fill="white" text-anchor="middle" font-family="Arial">Photo avant travaux</text></svg>');
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .project-image-after {
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect fill="%2339FF14" width="400" height="400"/><text x="200" y="190" font-size="24" fill="%23000000" text-anchor="middle" font-family="Arial" font-weight="bold">APRÈS</text><text x="200" y="220" font-size="14" fill="%23000000" text-anchor="middle" font-family="Arial">Photo projet terminé</text></svg>');
+            opacity: 0;
+            z-index: 2;
+        }
+
+        .project-card:hover .project-image-before {
+            opacity: 0;
+        }
+
+        .project-card:hover .project-image-after {
+            opacity: 1;
+        }
+
+        .project-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.95));
+            padding: 30px;
+            transform: translateY(0);
+            transition: all 0.4s ease;
+            z-index: 10;
+        }
+
+        .project-overlay h4 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: var(--vert-electrique);
+        }
+
+        .project-overlay p {
+            margin-bottom: 10px;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 20px;
+            font-size: 13px;
+            text-transform: uppercase;
+            color: var(--gris-clair);
+            margin-top: 10px;
+        }
+
+        /* Guarantee Section */
+        .guarantee {
+            background: var(--gris-anthracite);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .guarantee-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .guarantee h2 {
+            font-size: 48px;
+            margin-bottom: 30px;
+        }
+
+        .guarantee-badges {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .badge {
+            background: var(--noir);
+            padding: 30px;
+            border: 2px solid var(--vert-electrique);
+            min-width: 200px;
+        }
+
+        .badge h4 {
+            color: var(--vert-electrique);
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        /* Contact */
+        .contact {
+            padding: 100px 0;
+            background: var(--noir);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+        }
+
+        .contact-form {
+            background: var(--gris-anthracite);
+            padding: 50px;
+            border: 2px solid var(--vert-electrique);
+        }
+
+        .contact-form h3 {
+            font-size: 32px;
+            margin-bottom: 35px;
+        }
+
+        .form-step {
+            margin-bottom: 30px;
+        }
+
+        .step-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            background: var(--vert-electrique);
+            color: var(--noir);
+            text-align: center;
+            line-height: 35px;
+            font-weight: 900;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .form-step label {
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            margin: 0;
+        }
+
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            background: var(--noir);
+            border: 2px solid var(--gris-clair);
+            color: var(--blanc);
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .contact-form input:focus,
+        .contact-form select:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--vert-electrique);
+        }
+
+        .contact-form textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 18px;
+            background: var(--vert-electrique);
+            color: var(--noir);
+            border: none;
+            font-size: 18px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+
+        .contact-form button:hover {
+            background: var(--blanc);
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.6);
+        }
+
+        .contact-info h3 {
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        .info-block {
+            background: var(--gris-anthracite);
+            padding: 30px;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--vert-electrique);
+        }
+
+        .info-block h4 {
+            font-size: 18px;
+            color: var(--vert-electrique);
+            margin-bottom: 10px;
+        }
+
+        .info-block p {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--noir);
+            border-top: 2px solid var(--vert-electrique);
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-section h4 {
+            color: var(--vert-electrique);
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-section a {
+            color: var(--gris-clair);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--vert-electrique);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--gris-anthracite);
+            color: var(--gris-clair);
+        }
+
+        /* Floating CTA */
+        .floating-cta {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--vert-electrique);
+            color: var(--noir);
+            padding: 18px 30px;
+            border-radius: 50px;
+            font-weight: 900;
+            text-transform: uppercase;
+            text-decoration: none;
+            box-shadow: 0 5px 30px rgba(57, 255, 20, 0.5);
+            z-index: 999;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-split {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+
+            .hero-left {
+                padding: 40px 30px;
+            }
+
+            .hero-right {
+                min-height: 400px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--noir);
+                flex-direction: column;
+                padding: 30px;
+                border-top: 2px solid var(--vert-electrique);
+                gap: 15px;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-menu .cta-primary {
+                width: 100%;
+                text-align: center;
+                padding: 15px 20px;
+            }
+
+            .hero-content h1 {
+                font-size: 42px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .guarantee-badges {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section-header h2 {
+            font-size: clamp(32px, 5vw, 52px);
+                font-size: 38px;
+            }
+
+            .contact-form {
+                padding: 35px 25px;
+            }
+
+            .floating-cta {
+                bottom: 20px;
+                right: 20px;
+                padding: 15px 25px;
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            .hero-content p {
+            font-size: clamp(16px, 2vw, 20px);
+                font-size: 16px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-number {
+                font-size: 42px;
+            }
+
+            .section-header h2 {
+            font-size: clamp(32px, 5vw, 52px);
+                font-size: 32px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-box {
+                padding: 35px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <img src="Images/Logo/logo.png" alt="AP Quartier" class="logo-box logo-img">
+                    <span class="logo-text">AP QUARTIER</span>
+                </a>
+                <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projets">Projets</a></li>
+                    <li><a href="#expertise">Expertise</a></li>
+                    <li><a href="#contact" class="cta-primary">Soumission Express</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero-split" id="accueil">
+        <div class="hero-left">
+            <div class="hero-content">
+                <h1>
+                    TRANSFORMEZ VOTRE PROPRIÉTÉ.
+                    <span class="highlight">GARANTIE.</span>
+                </h1>
+                <p>Service professionnel de paysagement. Résultats documentés. Satisfaction garantie à 100%.</p>
+                <a href="#contact" class="cta-primary" style="display: inline-block; padding: 18px 40px; font-size: 16px;">DÉMARRER MON PROJET</a>
+            </div>
+        </div>
+        <div class="hero-right">
+            <div class="hero-badge">Propreté. Précision. Perfection.</div>
+        </div>
+    </div>
+
+    <div class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">1+</div>
+                    <div class="stat-label">Année</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">30+</div>
+                    <div class="stat-label">Projets</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">+500</div>
+                    <div class="stat-label">Heures Sauvées</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Services Professionnels</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="services-grid">
+                <div class="service-box">
+                    <h3>Aménagement paysager</h3>
+                    <ul>
+                        <li>Entièrement personnalisable</li>
+                        <li>Design avant-projet</li>
+                        <li>Construction de jardins</li>
+                        <li>Pose de pavé uni</li>
+                        <li>Rapports de service détaillés</li>
+                    </ul>
+                    <a href="#contact" class="service-cta">Obtenir une soumission →</a>
+                </div>
+
+                <div class="service-box">
+                    <h3>Entretien de cour</h3>
+                    <ul>
+                        <li>Tonte de gazon</li>
+                        <li>Taillage des buissons</li>
+                        <li>Taillage des haies</li>
+                        <li>Râclage des feuilles</li>
+                        <li>Désherbage et contrat annuel</li>
+                    </ul>
+                    <a href="#contact" class="service-cta">Voir nos forfaits →</a>
+                </div>
+
+                <div class="service-box">
+                    <h3>Déneigement résidentiel</h3>
+                    <ul>
+                        <li>Déneigement avant 7h</li>
+                        <li>Stationnement</li>
+                        <li>Entrée</li>
+                        <li>Cour arrière</li>
+                        <li>Évaluation gratuite du terrain</li>
+                    </ul>
+                    <a href="#contact" class="service-cta">Réserver maintenant →</a>
+                </div>
+
+                <div class="service-box">
+                    <h3>Lavage de vitres résidentiel et commercial</h3>
+                    <ul>
+                        <li>Lavage des vitres</li>
+                        <li>Nettoyage des cadres</li>
+                        <li>Contrat saisonnier</li>
+                        <li>Forfaits personnalisés</li>
+                        <li>Service Express</li>
+                    </ul>
+                    <a href="#contact" class="service-cta">Réserver maintenant →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects" id="projets">
+        <div class="container">
+            <div class="section-header">
+                <h2>Projets & Résultats</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image-before"></div>
+                    <div class="project-image-after"></div>
+                    <div class="project-overlay">
+                        <h4>Aménagement de terrasse</h4>
+                        <p>Création complète d'une terrasse avec intégration de pavé</p>
+                        <div class="project-meta">
+                            <span>10 M²</span>
+                            <span>7 Jours</span>
+                            <span>Résidentiel</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image-before"></div>
+                    <div class="project-image-after"></div>
+                    <div class="project-overlay">
+                        <h4>Transformation de cour</h4>
+                        <p>Nettoyage complet d'une cour envahie par les plantes</p>
+                        <div class="project-meta">
+                            <span>40 M²</span>
+                            <span>3 Heures</span>
+                            <span>Résidentiel</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image-before"></div>
+                    <div class="project-image-after"></div>
+                    <div class="project-overlay">
+                        <h4>Entretien de cour</h4>
+                        <p>Entretien classique, enlèvement des feuilles et mauvaises herbes</p>
+                        <div class="project-meta">
+                            <span>60 M²</span>
+                            <span>1 Heure</span>
+                            <span>Résidentiel</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="guarantee" id="expertise">
+        <div class="container">
+            <div class="section-header">
+                <h2>À Propos</h2>
+                <div class="underline"></div>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; margin-top: 60px;">
+                <!-- Valeurs -->
+                <div style="background: var(--noir); padding: 40px; border-left: 4px solid var(--vert-electrique); border-radius: 5px;">
+                    <h3 style="color: var(--vert-electrique); margin-bottom: 20px; font-size: 28px; text-align: left;">
+                        Nos Valeurs
+                    </h3>
+                    <p style="font-size: 17px; color: var(--gris-clair); line-height: 1.8; text-align: left;">
+                        AP Quartier est bien plus qu'une simple entreprise : c'est un projet de passion où le client passe toujours en premier. 
+                        Nettoyer, entretenir, innover — tout ce que nous faisons vise à embellir votre cour et à contribuer à la beauté de notre quartier. 
+                        Nous ne cherchons pas simplement à accomplir une tâche. Chez AP Quartier, nous nous assurons que chaque détail est pris en main 
+                        avec soin, rigueur et dévouement.
+                    </p>
+                </div>
+
+                <!-- Équipe -->
+                <div style="background: var(--noir); padding: 40px; border-left: 4px solid var(--vert-electrique); border-radius: 5px;">
+                    <h3 style="color: var(--vert-electrique); margin-bottom: 20px; font-size: 28px; text-align: left;">
+                        Notre Équipe
+                    </h3>
+                    <p style="font-size: 17px; color: var(--gris-clair); line-height: 1.8; text-align: left;">
+                        Au fil du temps, nous avons développé une équipe qui reflète pleinement nos valeurs. Nos employés sont toujours prêts à vous aider 
+                        et à vous accompagner à chaque étape du service. AP Quartier, c'est une équipe motivée, débrouillarde et entièrement dédiée à votre 
+                        satisfaction. Toujours prêts à répondre présent, nous mettons tout en œuvre pour vous offrir un service fiable, efficace et chaleureux.
+                    </p>
+                </div>
+
+                <!-- Histoire -->
+                <div style="background: var(--noir); padding: 40px; border-left: 4px solid var(--vert-electrique); border-radius: 5px;">
+                    <h3 style="color: var(--vert-electrique); margin-bottom: 20px; font-size: 28px; text-align: left;">
+                        Notre Histoire
+                    </h3>
+                    <p style="font-size: 17px; color: var(--gris-clair); line-height: 1.8; text-align: left;">
+                       Née d'un défi local, AP Quartier sert son quartier avec passion et rigueur. 
+                       Grâce à la confiance d'une clientèle fidèle, nous avons bâti une équipe engagée et des valeurs solides, 
+                       fières de contribuer à la beauté et au bien-être de notre communauté.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Obtenez Votre Soumission</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-form">
+                    <h3>Formulaire Express</h3>
+                    <form>
+                        <div class="form-step">
+                            <div class="step-header">
+                                <span class="step-number">1</span>
+                                <label>TYPE DE SERVICE</label>
+                            </div>
+                            <select required>
+                                <option value="">Sélectionnez...</option>
+                                <option>Aménagement paysager</option>
+                                <option>Entretien de cour</option>
+                                <option>Nettoyage de cour</option>
+                                <option>Lavage de vitres résidentiel</option>
+                                <option>Lavage de vitres commercial</option>
+                                <option>Déneigement</option>
+                            </select>
+                        </div>
+
+                        <div class="form-step">
+                            <div class="step-header">
+                                <span class="step-number">2</span>
+                                <label>VOS COORDONNÉES</label>
+                            </div>
+                            <input type="text" placeholder="Nom complet" required>
+                            <input type="tel" placeholder="Téléphone" required style="margin-top: 15px;">
+                            <input type="email" placeholder="Courriel" required style="margin-top: 15px;">
+                        </div>
+
+                        <div class="form-step">
+                            <div class="step-header">
+                                <span class="step-number">3</span>
+                                <label>DÉTAILS DU PROJET</label>
+                            </div>
+                            <input type="text" placeholder="Adresse complète" required>
+                            <textarea placeholder="Décrivez votre projet..." style="margin-top: 15px;"></textarea>
+                        </div>
+
+                        <button type="submit">ENVOYER MA DEMANDE</button>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <h3>Contactez-nous</h3>
+                    
+                    <div class="info-block">
+                        <h4>TÉLÉPHONE</h4>
+                        <p>514-506-0465</p>
+                        <p>438-398-1232</p>
+                    </div>
+
+                    <div class="info-block">
+                        <h4>COURRIEL</h4>
+                        <p><a href="mailto:info@apquartier.com" style="color: var(--blanc); text-decoration: none;">ap.quartier@gmail.com</a></p>
+                    </div>
+
+                    <div class="info-block">
+                        <h4>HORAIRE</h4>
+                        <p>Tous les jours: 9h-17h</p>
+                    </div>
+
+                    <div class="info-block">
+                        <h4>ZONE DE SERVICE</h4>
+                        <p>Grand Montréal</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>AP QUARTIER</h4>
+                    <p style="color: var(--gris-clair); margin-bottom: 15px;">
+                        Service professionnel de paysagement, entretien, déneigement et lavage de vitres à Montréal. 
+                        Satisfaction garantie à 100%.
+                    </p>
+                    <p style="color: var(--gris-clair);">
+                        <strong>514-506-0465</strong><br>
+                        <strong>438-398-1232</strong><br>
+                        <a href="mailto:info@apquartier.com" style="color: var(--gris-clair); text-decoration: none;">ap.quartier@gmail.com</a>
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4>SERVICES</h4>
+                    <ul>
+                        <li><a href="#services">Aménagement paysager</a></li>
+                        <li><a href="#services">Entretien de cour</a></li>
+                        <li><a href="#services">Déneigement</a></li>
+                        <li><a href="#services">Lavage de vitres</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>ENTREPRISE</h4>
+                    <ul>
+                        <li><a href="#expertise">À Propos</a></li>
+                        <li><a href="#projets">Réalisations</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>INFOS</h4>
+                    <p style="color: var(--gris-clair); margin-bottom: 20px;"><strong>Horaires</strong><br>Tous les jours<br>9h - 17h</p>
+                    <p style="color: var(--gris-clair);"><strong>Zone de service</strong><br>Grand Montréal<br>et environs</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AP QUARTIER. TOUS DROITS RÉSERVÉS.</p>
+                <div style="margin-top: 15px;">
+                    <a href="https://www.instagram.com/ap.quartier/" target="_blank" style="color: var(--gris-clair); margin: 0 10px; text-decoration: none; transition: color 0.3s;">Instagram</a>
+                    <a href="https://www.facebook.com/profile.php?id=61578936593171" target="_blank" style="color: var(--gris-clair); margin: 0 10px; text-decoration: none; transition: color 0.3s;">Facebook</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="tel:5145060465" class="floating-cta">APPELER</a>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navMenu').classList.toggle('active');
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                    document.getElementById('navMenu').classList.remove('active');
+                }
+            });
+        });
+
+        // Animate stats on scroll
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.stat-item, .service-box, .project-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
